@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这是React的practice！</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+
+
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+
+   /* import { Button } from 'antd';
+    ReactDOM.render(
+    <div>
+            <Button type="primary">Primary</Button>
+            <Button>Default</Button>
+            <Button type="dashed">Dashed</Button>
+            <Button type="danger">Danger</Button>
+    </div>
+            , mountNode);
+*/
+
+
+//这是最简单的react列子，组件之间的引用！
+/*function format(user) {
+    return user.firstName+'香克斯！'+'user.lastName';
+}
+const user={
+    firstName:'Alice',
+    lastName:'Hancock'
+}
+const element=(
+    <h1>
+        hello,{format(user)}
+    </h1>
+)
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+)
+*/
+
+//图片的引用方式
+/*const user={
+    img:'images/8.jpg',
+    name:'hello world'
+}
+const img = <img src={user.img} />;
+console.log(img);*/
+
+// 这是小时钟的代码
+/*function tick(){
+    const element=(
+        <div>
+            <h1>hello world!</h1>
+            <div>It is {new Date().toLocaleTimeString()}</div>        
+        </div>
+    );
+    ReactDOM.render(
+        element,
+        document.getElementById('root')
+    )
+}
+setInterval(tick,1000);*/
+
+
+// 这是自定义的属性，组件之间的调用
+/*function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+*/
+
+// 这是计时器的两种写法，第一种比较简单，第二种是react写法
+/*function Clock(props) {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);*/
+
+// 这是第二种写法
+/*class Clock extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={date:new Date()}
+    }
+    tick(){
+        this.setState({
+            date:new Date()
+        })
+    }
+    componentDidMount(){
+        this.timer=setInterval(
+            ()=>this.tick(),1000
+        )
+    }
+    componentWillUnmount(){
+        clearInterval(this.timer);
+    }
+    render() {
+        return (
+            <div>
+               <h1>it is {this.state.date.toLocaleTimeString()}</h1>
+            </div>
+        )
+    }
+}
+ReactDOM.render(<Clock />,document.body)
+*/
+
+
+
+// 添加一个分配初始化的类构造函数this.state：
+/*class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+*/
+
+
+
+// 这是toggle判断的，switch开关
+/*class Toggle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }))
+    }
+    render() {
+        return (
+            <button onClick={this.handleClick}>
+                {this.state.isToggleOn ? 'ON':'OFF'}    
+            </button>        
+        )
+    }
+}
+ReactDOM.render(
+    <Toggle />,
+    document.getElementById('root')
+)
+*/
+
+
+// 防止组件呈现,点击显示和隐藏
+function WarningBanner(props) {
+    if(!props.warn) {
+        return null;
+    }
+
+    return (
+        <div>
+           It is Warning
+        </div>
+    )
+}
+
+class Page extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {showWaring: true};
+        this.handleToggleClick = this.handleToggleClick.bind(this);
+    }
+    handleToggleClick() {
+        this.setState(prevState=>({
+            showWaring: !prevState.showWaring
+        }))    
+    }
+    render() {
+        return (
+            <div>
+                <WarningBanner warn={this.state.showWaring} />
+                <button onClick={this.handleToggleClick}>
+                {this.state.showWaring ? 'Hide':'Show'}
+                </button>
+            </div> 
+            
+        )
+    }
+}
+ReactDOM.render(
+    <Page />,
+    document.getElementById('root')
+)
+
+
+
+// 下面这是输出数组的写法
+/*function NumberList(props) {
+    const numbers=props.numbers;
+    const listItems=numbers.map((number)=><li>{number}</li>);
+    return (
+        <ul>{listItems}</ul>
+    )
+}
+
+const numbers=[1,2,3,4,5];
+ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+)*/
+
+/*function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}   
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);*/
+
+
+
+// 阵列，相当于输出数组
+/*function Blog(props) {
+    const sidebar = (
+        <ul>
+            {props.posts.map((post)=>
+                <li key={post.id}>
+                    {post.title}
+                </li>
+            )}
+        </ul>
+    )
+
+const content = props.posts.map((post)=>
+    <div key={post.id}>
+        <h3>{post.title}</h3>
+        <p>{post.content}</p>
+    </div>
+);
+
+return (
+    <div>
+        {sidebar}
+        <hr/>
+        {content}
+    </div>
+)
+
+}
+const posts = [
+    {id:1,title:'hello world',content:'Welcome'},
+    {id:2,title:'hello Lufy',content:'please reset'}
+]
+ReactDOM.render(
+    <Blog posts={posts} />,
+    document.getElementById('root')
+)
+*/
+
+// 关于表单的alert弹出框
+/*class Nameform extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={value:''};
+        this.handleChange=this.handleChange.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
+    }
+    handleChange(event) {
+        this.setState({value:event.target.value})
+    }
+    handleSubmit(event) {
+        alert('which is submited or named :'+this.state.value);
+        event.preventDefault();
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <input type='text' value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type='submit' value='提交' />
+            </form>
+        )
+    }
+}
+ReactDOM.render(
+    <Nameform />,
+    document.getElementById('root')
+)
+*/
+
+
+// 关于textarea
+/*class Essay extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            vaue:'This is essay what you want to write'
+        };
+        this.handleChange=this.handleChange.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
+    }
+    handleChange(event){
+        this.setState({value:event.target.value});
+    }
+    handleSubmit(event){
+        alert('the essay you have writted : '+this.state.value);
+        event.preventDefault(); 
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <textarea value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type='submit' value='提交' />
+            </form>
+        )
+    }
+}
+ReactDOM.render(
+    <Essay />,
+    document.getElementById('root')
+)
+*/
+
+
+// 下面是react创建元素的特殊写法
+/*<MyButton color='blue' babel='false'>
+    It is a number
+</MyButton>
+类似于
+React.createElement(
+    MyButton,
+    {color:'red','babel':'false'},
+    'It is a number'
+)*/
+
+
+// 处理多个输入的，多个input
+/*class Reservation extends React.Component{
+constructor(props){
+    super(props);
+    this.state={
+        isGoing:true,
+        numberOfGuests:2
+    };
+this.handleInputChange=this.handleInputChange.bind(this);
+}
+
+handleInputChange(event){
+    const target=event.target;
+    const value=target.type==='checkbox' ? target.checked : target.value;
+    const name=target.name;
+   
+    this.setState({
+        [name]:value
+    })
+}
+
+render() {  
+    return (
+        <form>
+            <label>
+                The anymay:
+                <input name='isGoing'
+                    type='checkbox'
+                    checked={this.state.isGoing}
+                    onChange={this.handleInputChange} />
+            </label>
+            <br />  
+            <label>
+                Name of Gusts:
+                <input name='numberOfGuests'
+                    type='number'
+                    checked={this.state.numberOfGuests}
+                    onChange={this.handleInputChange} />
+            </label>
+        </form>
+    )
+}
+}
+
+ReactDOM.render(
+    <Reservation />,
+    document.getElementById('root')
+)
+*/
+
+// 这些相当于循环遍历输出函数
+/*class MessageList extends React.Component{
+    render() {
+        const color='purple';
+        const children=this.props.messages.map((message)
+            =><Message text={message.text} color={color} />
+    }
+    return <div>{children}</div>;
+}*/
+
+
+// 验证属性的
+/*var Mytitle=React.createClass({
+    getDefaultProps:function(){
+        return {
+            title:'shanks'
+        }
+    },
+    render:function(){
+        return <h1>{this.props.title}</h1>
+    }
+})
+ReactDOM.render(
+    <Mytitle />,
+    document.getElementById('root')
+)
+*/
+
+/*var Mytitle=React.createClass({
+    propTypes:{
+        title:React.PropTypes.string.isRequired,
+    },
+    render:function(){
+        return <h1>{this.props.title}</h1>
+    }
+})
+var title='123';
+ReactDOM.render(
+    <Mytitle title={title} />,
+    document.getElementById('root')
+)*/
+
+
+// 获取真实的DOM,这个是难点和重点
+/*
+var Mycomponent=React.createClass({
+    handleClick:function(){
+        this.refs.myInput.focus();
+    },
+    render:function(){
+        return (
+            <div>
+                <input type='text' ref='myInput' />
+                <input type='button' value='hello' onClick={this.handleClick}/>
+            </div>
+        )
+    }
+})
+ReactDOM.render(
+    <Mycomponent />,
+    document.getElementById('root')
+)
+*/
+
+
+// 这个是修改状态的
+/*var Linkbutton=React.createClass({
+    getInitialState:function(){
+        return {linked:false}
+    },
+    handleClick:function(e){
+        this.setState({linked: !this.state.linked})
+    },
+    render:function(){
+        var text=this.state.linked ? 'linked' : 'not linked'
+        return (
+            <p onClick={this.handleClick}>
+                you {text} is linked
+            </p>
+        )
+    }
+})
+ReactDOM.render(
+    <Linkbutton />,
+    document.getElementById('root')
+)*/
+
+// 这个是关于表单的，实现了双向数据绑定
+/*var Input = React.createClass({
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function () {
+    var value = this.state.value;
+    return (
+      <div>
+        <input type="text" value={value} onChange={this.handleChange} />
+        <p>{value}</p>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(<Input/>, document.body);*/
+
+
+// 这个其实就是异步的计时器
+/*var Hello = React.createClass({
+  getInitialState: function () {
+    return {
+      opacity: 1.0
+    };
+  },
+
+  componentDidMount: function () {
+    this.timer = setInterval(function () {
+      var opacity = this.state.opacity;
+      opacity -= .05;
+      if (opacity < 0.1) {
+        opacity = 1.0;
+      }
+      this.setState({
+        opacity: opacity
+      });
+    }.bind(this), 100);
+  },
+
+  render: function () {
+    return (
+      <div style={{opacity: this.state.opacity}}>
+        Hello {this.props.name}
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Hello name="world"/>,
+  document.body
+);
+*/
+
+// 这是es5中的react ajax，使用的是jQuery，头部需要引入
+/*var UserGist = React.createClass({
+  getInitialState: function() {
+    return {
+      username: '',
+      lastGistUrl: ''
+    };
+  },
+
+  componentDidMount: function() {
+    $.get(this.props.source, function(result) {
+      var lastGist = result[0];
+      if (this.isMounted()) {
+        this.setState({
+          username: lastGist.owner.login,
+          lastGistUrl: lastGist.html_url
+        });
+      }
+    }.bind(this));
+  },
+
+  render: function() {
+    return (
+      <div>
+        {this.state.username}
+
+        i's last gist is
+        <a href={this.state.lastGistUrl}>here</a>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <UserGist source="https://api.github.com/users/octocat/gists" />,
+  document.body
+);*/
+
+
+/*const element=React.createElement(
+    'h1',
+    {className:'shanks'},
+    'hello world'
+)
+ReactDOM.render(element,document.body)
+*/
+
+
+
+// 这是es6的转义
+/*const aa=(ss)=>{return 'shanks'} 
+console.log(aa);
+
+const mapDispatchToProps = (
+  dispatch,
+  ownProps
+) => {
+  return {
+    onClick: () => {
+      dispatch({
+        type: 'SET_VISIBILITY_FILTER',
+        filter: ownProps.filter
+      });
+    }
+  };
+}
+console.log(mapDispatchToProps)
+*/
+// 上面那个是函数的写法，下面这个是对象
+/*const mapDispatchToProps = {
+  onClick: (filter) => {
+    type: 'SET_VISIBILITY_FILTER',
+    filter: filter
+  };
+}
+*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
