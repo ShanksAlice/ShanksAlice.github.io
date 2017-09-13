@@ -1,0 +1,153 @@
+.resource {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 65px;
+
+  .resource-category {
+    width: 100px;
+
+    .block {
+      margin-top: 20px;
+      margin-bottom: 40px;
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .links {
+        margin-left: 15px;
+        .item {
+          font-size: 12px;
+          color: @text-desc-color;
+          margin-bottom: 10px;
+          cursor: pointer;
+          span {
+            border-bottom: 1px solid transparent;
+          }
+
+          &:hover span {
+            border-bottom-color: @text-title-color;
+          }
+
+          &.active span {
+            color: @theme-color;
+          }
+        }
+      }
+    }
+  }
+
+  .books {
+    flex: 1;
+    padding: 0 40px;
+    flex-wrap: wrap;
+    .placeholder-text, .placeholder-img {
+      display: none;
+    }
+
+    &.placeholder {
+      .placeholder-text, .placeholder-img {
+        display: block;
+      }
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 180px;
+        margin-bottom: 10px;
+        height: auto;
+      }
+    }
+
+    .block-book {
+      width: 33%;
+      display: inline-block;
+      padding: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 1px 1px 10px 5px rgba(204, 204, 204, 0.28);
+
+        .title {
+          color: @theme-color;
+        }
+      }
+
+      .img {
+        height: 300px;
+        max-width: 100%;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .desc {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.resource-detail {
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+
+  .img {
+    margin-right: 50px;
+    width: 400px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .detail {
+    flex: 1;
+    -ms-flex: none;
+
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .tags {
+      display: flex;
+      .tag {
+        text-decoration: underline;
+        margin-right: 20px;
+      }
+    }
+
+    .content {
+      margin: 40px 0;
+    }
+  }
+}
+
+.container-block {
+  display: flex;
+  flex-direction: column;
+  background: @download-resource-background-color;
+  padding: 30px;
+  margin: 30px 0;
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .desc {
+    margin-bottom: 10px;
+  }
+}

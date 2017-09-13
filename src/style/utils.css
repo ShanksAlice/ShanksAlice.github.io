@@ -1,0 +1,28 @@
+.margin-vertical-large {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.margin-vertical-medium {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.margin-horizontal-large {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.margin-horizontal-medium {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-items {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}

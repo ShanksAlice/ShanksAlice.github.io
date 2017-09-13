@@ -1,0 +1,11 @@
+.landing {
+  height: 500px;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.landing .title {
+  font-size: 40px;
+}

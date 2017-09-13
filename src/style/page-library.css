@@ -1,0 +1,9 @@
+.block-book {
+  width: 30%;
+}
+.block-book .img {
+  width: 100%;
+}
+.block-book .desc {
+  font-size: 12px;
+}

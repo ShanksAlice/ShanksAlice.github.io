@@ -1,0 +1,32 @@
+.update-info {
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .sub-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .cl-icons, .num {
+    color: @like-color;
+  }
+
+  .like {
+    i {
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 5px;
+
+      &.active {
+        color: @theme-color;
+        cursor: default;
+      }
+
+      &:hover {
+        color: @theme-color;
+      }
+    }
+  }
+}

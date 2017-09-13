@@ -1,0 +1,15 @@
+@media (max-width: 986px) {
+  #nav {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    flex-direction: column;
+    top: 0;
+  }
+  #nav :after {
+    content: "";
+  }
+  #nav .nav-item {
+    display: none;
+  }
+}

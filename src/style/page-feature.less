@@ -1,0 +1,59 @@
+.section-group {
+  margin-bottom: 50px;
+  position: relative;
+
+  .hash {
+    visibility: hidden;
+    position: absolute;
+    top: -40px;
+  }
+
+  .description {
+    padding-top: 38px;
+  }
+
+  .category {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  &:not(:nth-child(5)):after {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid @splitter-color;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    height: 50px;
+  }
+
+  &:nth-child(5) {
+    margin-bottom: 65px;
+  }
+
+  .cl-icons {
+    font-size: 40px;
+    color: @text-title-color;
+    line-height: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .icon-qunzu, .icon-shubiao, .icon-king,
+  .icon-fenxi, .icon-bingtu {
+    font-size: 42px;
+  }
+
+  .icon-duanxin, .icon-app, .icon-mobanwendang, .icon-zujianicon0,
+  .icon-yanjing, .icon-rili, .icon-zujianicon01 {
+    font-size: 46px;
+  }
+
+  .icon-xiaozhushouliucheng {
+    font-size: 50px;
+  }
+
+  .icon-rocket, .icon-loudou01 {
+    font-size: 38px;
+  }
+}

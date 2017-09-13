@@ -1,0 +1,15 @@
+.description .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.description .desc {
+  width: 50%;
+  text-align: center;
+}
+.description.text-align-start .desc,
+.description.text-align-start .title {
+  text-align: justify;
+  text-align: start;
+  justify-content: flex-start;
+  width: 100%;
+}

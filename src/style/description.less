@@ -1,0 +1,20 @@
+.description {
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .desc {
+    width: 50%;
+    text-align: center;
+  }
+
+  &.text-align-start {
+    .desc, .title  {
+      text-align: justify; //support IE
+      text-align: start;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+}

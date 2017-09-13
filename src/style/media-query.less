@@ -1,0 +1,126 @@
+.nav {
+  display: none;
+  &:after {
+    content: "";
+    border: 7px double #fff;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #fff;
+    height: 3px;
+    width: 20px;
+    cursor: pointer;
+    top: -10px;
+    position: absolute;
+
+    .white & {
+      border-color: @theme-color;
+    }
+  }
+}
+@media screen and (max-width: 986px) {
+  footer {
+    padding: 0;
+
+    .copyright {
+      flex-wrap: wrap;
+    }
+
+    .contact {
+      margin: 0;
+    }
+  }
+
+
+  .category {
+    .block {
+      width: inherit;
+    }
+  }
+
+  .example .row {
+    flex-wrap: wrap;
+  }
+
+  .desc {
+    .video &, .description & {
+      width: @contentWidth;
+      text-align: center;
+    }
+  }
+
+  .logos img {
+    margin: 10px;
+    height: 20px;
+  }
+
+  .gallery {
+    height: 300px;
+    padding: 0;
+    .carousel-container {
+      height: 200px;
+    }
+
+    .carousel__control {
+      height: 15px;
+      width: 15px;
+    }
+
+    .quote {
+      height: 50px;
+      transform: translate(-112.5px, -25px);
+    }
+  }
+
+  .advantage .row {
+    flex-wrap: wrap;
+  }
+
+  .form {
+    .submit-btn {
+      min-width: inherit;
+    }
+  }
+
+  .label-input {
+    width: 100%;
+  }
+}
+
+// phone vertical
+@media screen and (max-width: 565px) {
+  .nav {
+    display: block;
+    position: relative;
+  }
+
+  #nav {
+    display: none;
+    width: 150px;
+    top: 35px;
+    right: 0;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: @theme-color;
+
+    .white & {
+      background: #fff;
+    }
+    a {
+      margin: 10px;
+    }
+  }
+
+  content {
+    flex: auto;
+  }
+
+  .form {
+    margin-left: 0;
+  }
+
+  .left .block:not(:first-child) {
+    display: none;
+  }
+}

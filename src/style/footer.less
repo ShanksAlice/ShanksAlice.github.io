@@ -1,0 +1,96 @@
+footer {
+  //width: 100%;
+  bottom: 0;
+  padding: 35px 40px 0;
+  //position: fixed;
+  //background: @background-color;
+  border-top: 1px solid @background-color-light-2;
+
+  &.showLayer {
+    position: fixed;
+    z-index: 1;
+
+    & > div {
+      display: none;
+    }
+  }
+
+  & > div {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 35px;
+  }
+
+  .left {
+    display: flex;
+    flex: 1;
+    -ms-flex: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    img {
+      width: 130px;
+      height: auto;
+    }
+  }
+
+  .contact {
+    align-self: flex-start;
+    margin-right: 40px;
+    .phone, .weibo, .wechat {
+      color: @text-desc-color;
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+    }
+
+    .weibo, .wechat {
+      cursor: pointer;
+      &:hover span {
+        color: @text-title-color;
+      }
+    }
+
+    img {
+      width: 1.2em;
+      margin-right: 1em;
+      height: auto;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    .phone {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+
+  .desc {
+    font-style: italic;
+  }
+
+  .copyright {
+    border-top: 1px solid @background-color-light-2;
+    display: flex;
+    padding: 20px 0;
+
+    address {
+      margin-right: 40px;
+      color: @text-desc-color;
+      font-style: normal;
+      font-size: 12px;
+    }
+
+    span {
+      color: @text-desc-color;
+      font-size: 12px;
+    }
+  }
+
+}

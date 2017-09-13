@@ -1,0 +1,6 @@
+.preview {
+  width: 40%;
+  height: 100%;
+  flex: 1;
+  align-self: flex-start;
+}

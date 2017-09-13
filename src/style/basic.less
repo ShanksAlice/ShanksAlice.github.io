@@ -1,0 +1,101 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, figure,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+@font-face {
+  font-family: 'pingfang';
+  src: url('fonts/pingfang.ttf') format('truetype');
+}
+
+* {
+  color: @text-normal-color;
+  //font-family: "PingFang SC", monospace;
+  font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,STHeitiSC-Light,simsun,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root > [data-reactroot] {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+content {
+  flex: 1;
+  -ms-flex:none;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 20px auto;
+  z-index: 0;
+  width: @contentWidth;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &.mini {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+form {
+  max-width: 100vw;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: @theme-color auto 1px;
+}
+
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder {
+  color: @placeholder-color;
+}
+
+.highlight {
+  color: @theme-color;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.title {
+  color: @text-title-color;
+  width: 100%;
+  section > & {
+    text-align: center;
+  }
+}
+
+.desc {
+  color: @text-desc-color;
+}
+
+video {
+  display: block;
+  border: 2px solid #444;
+  max-width: 80%;
+}

@@ -1,0 +1,155 @@
+.job-info {
+  .title {
+    border-bottom: 1px solid @splitter-color;
+
+    span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .cl-icons {
+      font-size: 30px;
+      margin-right: 10px;
+      &.icon-dianhuaxiaoshou {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.job-detail {
+
+  .breadcrumb {
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  align-items: flex-start;
+
+  .title {
+    font-size: 40px;
+  }
+
+  .detail {
+    margin: 20px 0;
+    .block {
+      .title {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      li {
+        margin: 5px;
+      }
+    }
+  }
+
+  .container-block {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+
+.how-to-join {
+ .block {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   width: 100%;
+   margin-bottom: 40px;
+
+   .cl-icons {
+     font-size: 40px;
+     margin-right: 10px;
+
+     &.icon-shangsheng {
+       font-size: 38px;
+       margin-right: 12px;
+     }
+
+     &.icon-layers {
+       font-size: 43px;
+       margin-right: 8px;
+       margin-left: -1px;
+     }
+
+     &.icon-qianduankaifa {
+       font-size: 30px;
+       margin-right: 11px;
+       margin-left: 2px;
+     }
+
+     &.icon-peixun {
+       font-size: 40px;
+       margin-bottom: -5px;
+     }
+
+     &.icon-zhenduishichang {
+       font-size: 32px;
+       margin-bottom: 2px;
+     }
+   }
+
+   .title {
+     font-size: 18px;
+     margin-bottom: 5px;
+     font-weight: bold;
+   }
+ }
+}
+
+.block.vertical .cl-icons {
+  font-size: 35px;
+
+  &.icon-peixun {
+    font-size: 40px;
+    margin-bottom: -5px;
+  }
+}
+
+.block.align-center {
+  align-items: center;
+}
+
+.name-tag {
+  margin-top: 10px;
+  text-align: center;
+
+  &.align-start {
+    text-align: justify; //support IE
+    text-align: start;
+  }
+
+  .name, .job-title {
+    font-size: 12px;
+  }
+}
+
+
+.icon-number {
+  margin: 0;
+  font-size: 20px !important;
+
+  &:before {
+    content: attr(data-num);
+    background: @number-icon-background-color;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    color: @number-icon-text-color;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+
+.join-us .location .list {
+  width: 60%;
+
+  .block {
+    margin-bottom: 10px;
+  }
+}

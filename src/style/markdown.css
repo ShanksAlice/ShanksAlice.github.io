@@ -1,0 +1,116 @@
+.markdown {
+  flex: 1;
+  -ms-flex: none;
+  align-self: flex-start;
+}
+.markdown > p {
+  margin-bottom: 0;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-weight: 400;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown p {
+  margin-bottom: 24px;
+  padding: 0;
+}
+.markdown h1 {
+  font-size: 48px;
+}
+.markdown h2 {
+  font-size: 36px;
+  margin: 24px 0 6px;
+}
+.markdown h3 {
+  font-size: 24px;
+}
+.markdown h4 {
+  font-size: 21px;
+}
+.markdown h5 {
+  font-size: 18px;
+}
+.markdown a {
+  color: #61BFC1;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+.markdown a:hover {
+  text-decoration: underline;
+}
+.markdown a:visited {
+  color: #466B6C;
+}
+.markdown ul,
+.markdown ol {
+  padding: 0;
+  margin: 0;
+}
+.markdown li {
+  line-height: 24px;
+}
+.markdown li ul,
+.markdown li ul {
+  margin-left: 24px;
+}
+.markdown p,
+.markdown ul,
+.markdown ol {
+  font-size: 14px;
+  line-height: 24px;
+}
+.markdown pre {
+  padding: 0px 24px;
+  max-width: 800px;
+  white-space: pre-wrap;
+}
+.markdown code {
+  background-color: #a6fafb;
+  color: #4d6175;
+  padding: 1px 3px;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.markdown aside {
+  display: block;
+  float: right;
+  width: 390px;
+}
+.markdown blockquote {
+  border-left: .5em solid #eee;
+  padding: 0 2em;
+  margin-left: 0;
+  max-width: 476px;
+}
+.markdown blockquote cite {
+  font-size: 14px;
+  line-height: 20px;
+  color: #bfbfbf;
+}
+.markdown blockquote cite:before {
+  content: '\2014 \00A0';
+}
+.markdown blockquote p {
+  color: #666;
+  max-width: 460px;
+}
+.markdown hr {
+  width: 540px;
+  text-align: left;
+  margin: 0 auto 0 0;
+  color: #c9d6d6;
+}
+.markdown img {
+  max-width: 84vw;
+}
